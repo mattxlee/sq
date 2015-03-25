@@ -42,10 +42,26 @@ class Connector
    */
   void close();
 
+  /**
+   *  Check sqlite return value and throw if sqlite is failed
+   *
+   *  @param ret The sqlite return value
+   */
   void check(int ret);
 
+  /**
+   *  Execute a SQL statement
+   *
+   *  @param sql SQL statement string
+   */
   void execute(const std::string &sql);
 
+  /**
+   *  Execute a SQL statement with one or more parameters
+   *
+   *  @param sql  SQL statement string
+   *  @param vals Parameters
+   */
   template <typename... T>
   void execute(const std::string &sql, T... vals)
   {
@@ -53,8 +69,23 @@ class Connector
     execute(statement, 1, vals...);
   }
 
+  /**
+   *  Run a query and fetch results
+   *
+   *  @param sql SQL statement string
+   *
+   *  @return Query result set
+   */
   Result query(const std::string &sql);
 
+  /**
+   *  Run a query with one or more parameters
+   *
+   *  @param sql  SQL statement string
+   *  @param vals Parameters
+   *
+   *  @return Query result set
+   */
   template <typename... T>
   Result query(const std::string &sql, T... vals)
   {
@@ -62,6 +93,11 @@ class Connector
     return query(statement, 1, vals...);
   }
 
+  /**
+   *  Get sqlite original database pointer
+   *
+   *  @return Sqlite database pointer
+   */
   sqlite3 *handler();
 
  private:
