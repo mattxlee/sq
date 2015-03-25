@@ -5,5 +5,4 @@
 #include "sq_statement.h"
 #include "sq_result.h"
 
-#endif // SQ_H
-
+#endif  // SQ_H
