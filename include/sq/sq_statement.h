@@ -16,6 +16,7 @@ class Statement
   Statement(Connector &connector, const std::string &sql);
 
   void bind(int index, int value);
+  void bind(int index, const char *value);
   void bind(int index, const std::string &value);
   void bind(int index, bool value);
 

@@ -17,6 +17,11 @@ void Statement::bind(int index, int value)
   _connector.check(sqlite3_bind_int(_stmt, index, value));
 }
 
+void Statement::bind(int index, const char *value)
+{
+  _connector.check(sqlite3_bind_text(_stmt, index, value, -1, nullptr));
+}
+
 void Statement::bind(int index, const std::string &value)
 {
   _connector.check(sqlite3_bind_text(_stmt, index, value.c_str(), -1, nullptr));
