@@ -13,6 +13,9 @@
 		3446ED191AC312C100F39DAC /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3446ED181AC312C100F39DAC /* test.cpp */; };
 		3446ED211AC3131700F39DAC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3446ED201AC3131700F39DAC /* libsqlite3.dylib */; };
 		3446ED221AC3132700F39DAC /* libsqlitecpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3446ED041AC30D7C00F39DAC /* libsqlitecpp.a */; };
+		349CB1101AE94F47000B47AB /* sq_result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3446ECF71AC30D0500F39DAC /* sq_result.cpp */; };
+		349CB1111AE94F47000B47AB /* sq_statement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3446ECF81AC30D0500F39DAC /* sq_statement.cpp */; };
+		349CB1121AE94F47000B47AB /* sq_connector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3446ECF61AC30D0500F39DAC /* sq_connector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +42,7 @@
 		3446ED161AC312C100F39DAC /* sqlitecpptest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sqlitecpptest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3446ED181AC312C100F39DAC /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		3446ED201AC3131700F39DAC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		349CB1181AE94F47000B47AB /* libsqlitecpp-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libsqlitecpp-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,13 @@
 			files = (
 				3446ED221AC3132700F39DAC /* libsqlitecpp.a in Frameworks */,
 				3446ED211AC3131700F39DAC /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349CB1131AE94F47000B47AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +90,7 @@
 			children = (
 				3446ED041AC30D7C00F39DAC /* libsqlitecpp.a */,
 				3446ED161AC312C100F39DAC /* sqlitecpptest */,
+				349CB1181AE94F47000B47AB /* libsqlitecpp-ios.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		349CB1141AE94F47000B47AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -167,13 +186,30 @@
 			productReference = 3446ED161AC312C100F39DAC /* sqlitecpptest */;
 			productType = "com.apple.product-type.tool";
 		};
+		349CB10E1AE94F47000B47AB /* sqlitecpp-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349CB1151AE94F47000B47AB /* Build configuration list for PBXNativeTarget "sqlitecpp-ios" */;
+			buildPhases = (
+				349CB10F1AE94F47000B47AB /* Sources */,
+				349CB1131AE94F47000B47AB /* Frameworks */,
+				349CB1141AE94F47000B47AB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sqlitecpp-ios";
+			productName = sqlitecpp;
+			productReference = 349CB1181AE94F47000B47AB /* libsqlitecpp-ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3446ECE11AC30CCA00F39DAC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = mattxlee;
 				TargetAttributes = {
 					3446ED031AC30D7C00F39DAC = {
@@ -197,6 +233,7 @@
 			projectRoot = "";
 			targets = (
 				3446ED031AC30D7C00F39DAC /* sqlitecpp */,
+				349CB10E1AE94F47000B47AB /* sqlitecpp-ios */,
 				3446ED151AC312C100F39DAC /* sqlitecpptest */,
 			);
 		};
@@ -218,6 +255,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3446ED191AC312C100F39DAC /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349CB10F1AE94F47000B47AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349CB1101AE94F47000B47AB /* sq_result.cpp in Sources */,
+				349CB1111AE94F47000B47AB /* sq_statement.cpp in Sources */,
+				349CB1121AE94F47000B47AB /* sq_connector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +348,7 @@
 		3446ED0D1AC30D7D00F39DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
@@ -316,6 +364,7 @@
 		3446ED0E1AC30D7D00F39DAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
@@ -362,6 +411,34 @@
 			};
 			name = Release;
 		};
+		349CB1161AE94F47000B47AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "sqlitecpp-ios";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		349CB1171AE94F47000B47AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "sqlitecpp-ios";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,6 +458,7 @@
 				3446ED0E1AC30D7D00F39DAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3446ED1A1AC312C100F39DAC /* Build configuration list for PBXNativeTarget "sqlitecpptest" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +467,16 @@
 				3446ED1C1AC312C100F39DAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349CB1151AE94F47000B47AB /* Build configuration list for PBXNativeTarget "sqlitecpp-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349CB1161AE94F47000B47AB /* Debug */,
+				349CB1171AE94F47000B47AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
