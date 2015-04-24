@@ -50,6 +50,21 @@ class Connector
   void check(int ret);
 
   /**
+   *  Begin a new transaction
+   */
+  void begin_transaction();
+
+  /**
+   *  Rollback current transaction
+   */
+  void rollback_transaction();
+
+  /**
+   *  Commit current transaction
+   */
+  void commit_transaction();
+
+  /**
    *  Execute a SQL statement
    *
    *  @param sql SQL statement string

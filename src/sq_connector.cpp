@@ -36,6 +36,21 @@ void Connector::check(int ret)
   }
 }
 
+void Connector::begin_transaction()
+{
+  execute("begin");
+}
+
+void Connector::rollback_transaction()
+{
+  execute("rollback");
+}
+
+void Connector::commit_transaction()
+{
+  execute("commit");
+}
+
 void Connector::execute(const std::string &sql)
 {
   Statement statement(*this, sql);
