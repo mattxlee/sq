@@ -8,6 +8,7 @@ namespace sq
 Statement::Statement(Connector &connector, const std::string &sql)
     : _connector(connector)
 {
+  printf("construct Statement, sql: %s\n", sql.c_str());
   connector.check(sqlite3_prepare_v2(_connector.handler(), sql.c_str(), -1,
                                      &_stmt, nullptr));
 }
