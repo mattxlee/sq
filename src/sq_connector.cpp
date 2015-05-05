@@ -36,20 +36,11 @@ void Connector::check(int ret)
   }
 }
 
-void Connector::begin_transaction()
-{
-  execute("begin");
-}
+void Connector::begin_transaction() { execute("begin"); }
 
-void Connector::rollback_transaction()
-{
-  execute("rollback");
-}
+void Connector::rollback_transaction() { execute("rollback"); }
 
-void Connector::commit_transaction()
-{
-  execute("commit");
-}
+void Connector::commit_transaction() { execute("commit"); }
 
 void Connector::execute(const std::string &sql)
 {
@@ -64,5 +55,10 @@ Result Connector::query(const std::string &sql)
 }
 
 sqlite3 *Connector::handler() { return _sqlite; }
+
+std::int64_t Connector::lastInsertId()
+{
+  return sqlite3_last_insert_rowid(_sqlite);
+}
 
 }  // namespace sq

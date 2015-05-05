@@ -115,6 +115,13 @@ class Connector
    */
   sqlite3 *handler();
 
+  /**
+   *  Get last insert row-id
+   *
+   *  @return last insert row-id
+   */
+  std::int64_t lastInsertId();
+
  private:
   void execute(Statement &statement, int index) { statement.execute(); }
 
